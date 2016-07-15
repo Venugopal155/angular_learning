@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <!-- Custom Styles -->
+        <link rel="stylesheet" type="text/css" href="css/custom_styles.css" />
+        <link rel="stylesheet" type="text/css" href="css/box_blur.css" />
+
+    </head>
+    <body>
+
+        <div class="container">
+            <header>
+                <h1>TEst Using angular</h1>
+
+            </header>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4">
+                    <div class="profile_css">
+                        <div class="tesx">
+                            <img src="images/back-profile.jpg" alt="sample87">
+                            <div class="profile_caption">
+                                <img src="images/default.jpg" alt="profile-sample4" class="profile">
+                                <h2>Test <span>Engineer</span></h2>
+                                <p>I'm looking for something that can deliver a 50-pound payload of snow on a small feminine target. Can you suggest something? Hello...? </p>
+                                <a href="#" class="follow">Follow</a>
+                                <a href="#" class="info">More Info</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-8">
+                    <div class="ib-container " id="ib-container">
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6"> 
+                                <article class="">
+                                    <header>
+                                        <h3><a href="#">Test custom notest one</a></h3>
+                                        <span>November 28, 2011 by Mary Lou</span>
+                                    </header>
+                                    <p>Today we will create a set of nice typography effects for big headlines using CSS3 and jQuery. There are many things we can do with CSS3 animations and transitions and we’ll...</p>
+                                </article>
+                            </div>
+                            <div class="col-xs-12 col-sm-6"> 
+                                <article class="">
+                                    <header>
+                                        <h3><a href="#">Test custom notest one</a></h3>
+                                        <span>November 28, 2011 by Mary Lou</span>
+                                    </header>
+                                    <p>Today we will create a set of nice typography effects for big headlines using CSS3 and jQuery. There are many things we can do with CSS3 animations and transitions and we’ll...</p>
+                                </article>
+                            </div>
+                            <div class="col-xs-12 col-sm-6"> 
+                                <article class="">
+                                    <header>
+                                        <h3><a href="#">Test custom notest one</a></h3>
+                                        <span>November 28, 2011 by Mary Lou</span>
+                                    </header>
+                                    <p>Today we will create a set of nice typography effects for big headlines using CSS3 and jQuery. There are many things we can do with CSS3 animations and transitions and we’ll...</p>
+                                </article>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script type="text/javascript">
+            $(function () {
+
+                var $container = $('#ib-container'),
+                        $articles = $container.children('article'),
+                        timeout;
+
+                $articles.on('mouseenter', function (event) {
+
+                    var $article = $(this);
+                    clearTimeout(timeout);
+                    timeout = setTimeout(function () {
+
+                        if ($article.hasClass('active'))
+                            return false;
+
+                        $articles.not($article.removeClass('blur').addClass('active'))
+                                .removeClass('active')
+                                .addClass('blur');
+
+                    }, 65);
+
+                });
+
+                $container.on('mouseleave', function (event) {
+
+                    clearTimeout(timeout);
+                    $articles.removeClass('active blur');
+
+                });
+
+            });
+        </script>
+        <script src="js/bootstrap.min.js"></script>
+    </body>
+</html>
